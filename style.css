@@ -1,0 +1,95 @@
+:root {
+    --bg: #0d1117;
+    --card-bg: #161b22;
+    --accent: #7c3aed;
+    --accent-glow: #a78bfa;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--text);
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 40px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 24px;
+    color: var(--accent-glow);
+    letter-spacing: 0.5px;
+}
+
+p {
+    color: var(--text-dim);
+}
+
+input {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: var(--text);
+    padding: 10px 12px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: var(--accent-glow);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background: #30363d;
+    cursor: not-allowed;
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+    min-height: 24px;
+}
+
+#stats {
+    font-size: 13px;
+}

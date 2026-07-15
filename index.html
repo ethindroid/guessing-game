@@ -2,26 +2,29 @@
 <html>
 <head>
     <title>Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Guess the Number</h1>
+    <div class="card">
+        <h1>Guess the Number</h1>
 
-    <div id="nameSection">
-        <p>What's your name?</p>
-        <input type="text" id="nameInput">
-        <button id="startButton">Start</button>
-    </div>
+        <div id="nameSection">
+            <p>What's your name?</p>
+            <input type="text" id="nameInput">
+            <button id="startButton">Start</button>
+        </div>
 
-    <div id="gameSection" style="display: none;">
-        <p id="greeting"></p>
-        <p>I'm thinking of a number between 1 and 100.</p>
+        <div id="gameSection" style="display: none;">
+            <p id="greeting"></p>
+            <p>I'm thinking of a number between 1 and 100.</p>
 
-        <input type="number" id="guessInput" min="1" max="100">
-        <button id="guessButton">Guess</button>
-        <button id="playAgainButton" style="display: none;">Play Again</button>
+            <input type="number" id="guessInput" min="1" max="100">
+            <button id="guessButton">Guess</button>
+            <button id="playAgainButton" style="display: none;">Play Again</button>
 
-        <p id="message"></p>
-        <p id="stats"></p>
+            <p id="message"></p>
+            <p id="stats"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
