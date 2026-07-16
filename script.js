@@ -48,6 +48,12 @@ let player;
 let secretNumber;
 let attempts;
 
+function playAnimation(element, className) {
+    element.classList.remove("shake", "pop");
+    void element.offsetWidth;
+    element.classList.add(className);
+}
+
 function startNewRound() {
     secretNumber = Math.floor(Math.random() * 100) + 1;
     attempts = 0;
@@ -87,10 +93,13 @@ button.addEventListener("click", function () {
 
     if (guess < secretNumber) {
         message.textContent = "Too low!";
+        playAnimation(message, "shake");
     } else if (guess > secretNumber) {
         message.textContent = "Too high!";
+        playAnimation(message, "shake");
     } else {
         message.textContent = "You got it! The number was " + secretNumber + ". It took you " + attempts + " tries.";
+        playAnimation(message, "pop");
         input.disabled = true;
         button.disabled = true;
         playAgainButton.style.display = "inline";
