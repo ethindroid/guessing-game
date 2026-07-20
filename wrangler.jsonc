@@ -1,7 +1,15 @@
 {
     "name": "nameless-band-c330",
     "compatibility_date": "2026-07-15",
+    "main": "worker.js",
     "assets": {
-        "directory": "./"
-    }
+        "directory": "./public",
+        "binding": "ASSETS"
+    },
+    "kv_namespaces": [
+        {
+            "binding": "LEADERBOARD",
+            "id": "98826f06cb1949bbaf29be64bf3cbf30"
+        }
+    ]
 }

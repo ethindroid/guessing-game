@@ -41,8 +41,10 @@ const greeting = document.getElementById("greeting");
 const input = document.getElementById("guessInput");
 const button = document.getElementById("guessButton");
 const playAgainButton = document.getElementById("playAgainButton");
+const shareButton = document.getElementById("shareButton");
 const message = document.getElementById("message");
 const stats = document.getElementById("stats");
+const leaderboardList = document.getElementById("leaderboardList");
 
 let player;
 let secretNumber;
@@ -54,6 +56,32 @@ function playAnimation(element, className) {
     element.classList.add(className);
 }
 
+async function loadLeaderboard() {
+    const response = await fetch("/api/scores");
+    const scores = await response.json();
+
+    leaderboardList.innerHTML = "";
+    for (const entry of scores) {
+        const item = document.createElement("li");
+        item.textContent = entry.name + " — " + entry.attempts + " tries";
+        leaderboardList.appendChild(item);
+    }
+}
+
+async function shareScore() {
+    shareButton.disabled = true;
+    shareButton.textContent = "Sharing...";
+
+    await fetch("/api/scores", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: player.name, attempts: attempts })
+    });
+
+    shareButton.textContent = "Shared!";
+    await loadLeaderboard();
+}
+
 function startNewRound() {
     secretNumber = Math.floor(Math.random() * 100) + 1;
     attempts = 0;
@@ -62,6 +90,9 @@ function startNewRound() {
     input.disabled = false;
     button.disabled = false;
     playAgainButton.style.display = "none";
+    shareButton.style.display = "none";
+    shareButton.disabled = false;
+    shareButton.textContent = "Share to Leaderboard";
 }
 
 const savedPlayer = loadSavedPlayer();
@@ -85,6 +116,7 @@ startButton.addEventListener("click", function () {
     gameSection.style.display = "block";
 
     startNewRound();
+    loadLeaderboard();
 });
 
 button.addEventListener("click", function () {
@@ -103,6 +135,7 @@ button.addEventListener("click", function () {
         input.disabled = true;
         button.disabled = true;
         playAgainButton.style.display = "inline";
+        shareButton.style.display = "inline";
 
         player.recordGame(attempts);
         stats.textContent = "Games played: " + player.gamesPlayed + ". Best score: " + player.bestScore + " tries.";
@@ -110,3 +143,4 @@ button.addEventListener("click", function () {
 });
 
 playAgainButton.addEventListener("click", startNewRound);
+shareButton.addEventListener("click", shareScore);
