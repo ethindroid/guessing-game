@@ -2,36 +2,30 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ajax's Site</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            text-align: center;
+        }
+        a {
+            color: #a78bfa;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Guess the Number</h1>
-
-        <div id="nameSection">
-            <p>What's your name?</p>
-            <input type="text" id="nameInput">
-            <button id="startButton">Start</button>
-        </div>
-
-        <div id="gameSection" style="display: none;">
-            <p id="greeting"></p>
-            <p>I'm thinking of a number between 1 and 100.</p>
-
-            <input type="number" id="guessInput" min="1" max="100">
-            <button id="guessButton">Guess</button>
-            <button id="playAgainButton" style="display: none;">Play Again</button>
-            <button id="shareButton" style="display: none;">Share to Leaderboard</button>
-
-            <p id="message"></p>
-            <p id="stats"></p>
-
-            <h2>Leaderboard</h2>
-            <ol id="leaderboardList"></ol>
-        </div>
+    <div>
+        <h1>Welcome to my site</h1>
+        <p>More coming soon. For now:</p>
+        <a href="/game">Play the guessing game</a>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

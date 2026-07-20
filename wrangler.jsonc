@@ -11,5 +11,11 @@
             "binding": "LEADERBOARD",
             "id": "98826f06cb1949bbaf29be64bf3cbf30"
         }
+    ],
+    "routes": [
+        {
+            "pattern": "ethinmfruesch.net",
+            "custom_domain": true
+        }
     ]
 }
