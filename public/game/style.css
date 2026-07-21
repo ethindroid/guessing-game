@@ -50,7 +50,8 @@ body {
     border: 1px solid #30363d;
     border-radius: 16px;
     padding: 40px;
-    width: 320px;
+    width: 90%;
+    max-width: 320px;
     text-align: center;
     box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
     animation: fadeInUp 0.8s ease;
@@ -124,4 +125,10 @@ button:disabled {
 
 #stats {
     font-size: 13px;
+}
+
+@media (max-width: 380px) {
+    .card {
+        padding: 24px;
+    }
 }

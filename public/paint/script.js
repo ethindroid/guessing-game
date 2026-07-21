@@ -25,41 +25,68 @@ clearButton.addEventListener("click", function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
-function getMousePos(event) {
+function getPos(clientX, clientY) {
     const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
     return {
-        x: event.clientX - rect.left,
-        y: event.clientY - rect.top
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
     };
 }
 
-canvas.addEventListener("mousedown", function (event) {
+function startDrawing(x, y) {
     isDrawing = true;
-    const pos = getMousePos(event);
-    lastX = pos.x;
-    lastY = pos.y;
-});
+    lastX = x;
+    lastY = y;
+}
 
-canvas.addEventListener("mousemove", function (event) {
+function drawTo(x, y) {
     if (!isDrawing) {
         return;
     }
 
-    const pos = getMousePos(event);
-
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
-    ctx.lineTo(pos.x, pos.y);
+    ctx.lineTo(x, y);
     ctx.stroke();
 
-    lastX = pos.x;
-    lastY = pos.y;
+    lastX = x;
+    lastY = y;
+}
+
+function stopDrawing() {
+    isDrawing = false;
+}
+
+canvas.addEventListener("mousedown", function (event) {
+    const pos = getPos(event.clientX, event.clientY);
+    startDrawing(pos.x, pos.y);
 });
 
-canvas.addEventListener("mouseup", function () {
-    isDrawing = false;
+canvas.addEventListener("mousemove", function (event) {
+    const pos = getPos(event.clientX, event.clientY);
+    drawTo(pos.x, pos.y);
 });
 
-canvas.addEventListener("mouseleave", function () {
-    isDrawing = false;
+canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("mouseleave", stopDrawing);
+
+canvas.addEventListener("touchstart", function (event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const pos = getPos(touch.clientX, touch.clientY);
+    startDrawing(pos.x, pos.y);
+});
+
+canvas.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const pos = getPos(touch.clientX, touch.clientY);
+    drawTo(pos.x, pos.y);
+});
+
+canvas.addEventListener("touchend", function (event) {
+    event.preventDefault();
+    stopDrawing();
 });

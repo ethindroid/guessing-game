@@ -163,3 +163,29 @@ nav a {
     font-size: 14px;
     margin: 0;
 }
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 20px;
+    }
+
+    nav a {
+        margin-left: 16px;
+    }
+
+    .hero {
+        padding: 40px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .games {
+        padding: 20px 20px 60px;
+    }
+}

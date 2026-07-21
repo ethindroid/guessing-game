@@ -1,9 +1,18 @@
 body {
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 16px;
 }
 
 canvas {
     border: 2px solid black;
     cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+    touch-action: none;
+}
+
+input[type="range"] {
+    vertical-align: middle;
 }
