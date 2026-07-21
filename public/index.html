@@ -2,33 +2,48 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ajax's Site</title>
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #0d1117;
-            color: #e6edf3;
-            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-            text-align: center;
-        }
-        a {
-            color: #a78bfa;
-            font-size: 20px;
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
+    <title>ethinmfruesch.net</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div>
-        <h1>Welcome to my site</h1>
-        <p>More coming soon. For now:</p>
-        <a href="/game">Play the guessing game</a>
-        <a href="/paint">Try the paint app</a>
-    </div>
+    <header>
+        <div class="logo">
+            <span class="logo-dot"></span>
+            ethinmfruesch.net
+        </div>
+        <nav>
+            <a href="#games">Games</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="badge">NEW GAMES DROPPING WEEKLY</span>
+        <h1>Play something<br><span class="gradient-text">out of this world.</span></h1>
+        <p>A small galaxy of free, no-download casual games. Pick one and jump in.</p>
+        <a href="#games" class="browse-button">Browse Games →</a>
+    </section>
+
+    <section id="games" class="games">
+        <div class="games-header">
+            <h2>Featured games</h2>
+            <span class="games-count">2 games and counting</span>
+        </div>
+
+        <div class="game-grid">
+            <a href="/game" class="game-card">
+                <div class="game-icon">🔢</div>
+                <h3>Guess the Number</h3>
+                <span class="play-badge">PLAY NOW</span>
+                <p>I pick a secret number 1–100 — can you find it before you run out of guesses?</p>
+            </a>
+
+            <a href="/paint" class="game-card">
+                <div class="game-icon">🎨</div>
+                <h3>Paint</h3>
+                <span class="play-badge">PLAY NOW</span>
+                <p>A blank canvas, a color picker, and a brush. Draw whatever you want.</p>
+            </a>
+        </div>
+    </section>
 </body>
 </html>

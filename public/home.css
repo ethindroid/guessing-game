@@ -1,0 +1,165 @@
+:root {
+    --bg: #0a0e1a;
+    --card-bg: #12172a;
+    --purple: #7c5cff;
+    --orange: #ff7a59;
+    --text: #e8e8f0;
+    --text-dim: #9aa0b4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--orange));
+    display: inline-block;
+}
+
+nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 100px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--purple), var(--orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--text-dim);
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0 auto 36px;
+}
+
+.browse-button {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(124, 92, 255, 0.4);
+    transition: transform 0.15s ease;
+}
+
+.browse-button:hover {
+    transform: scale(1.03);
+}
+
+.games {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+.games-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+}
+
+.games-count {
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border: 1px solid #232a45;
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--purple);
+}
+
+.game-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.game-card h3 {
+    margin: 0 0 8px;
+}
+
+.play-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #1a0f0a;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.game-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0;
+}
