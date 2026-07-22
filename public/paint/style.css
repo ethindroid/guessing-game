@@ -1,16 +1,46 @@
+:root {
+    --bg: #0d1117;
+    --accent: #7c3aed;
+    --accent-glow: #a78bfa;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+}
+
 body {
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     text-align: center;
     margin: 0;
     padding: 16px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+h1 {
+    color: var(--accent-glow);
 }
 
 canvas {
-    border: 2px solid black;
+    border: 2px solid #30363d;
+    border-radius: 10px;
     cursor: crosshair;
     max-width: 100%;
     height: auto;
     touch-action: none;
+    background: white;
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-glow);
 }
 
 input[type="range"] {
@@ -21,11 +51,11 @@ input[type="range"] {
     position: absolute;
     top: 16px;
     left: 16px;
-    color: #666;
+    color: var(--text-dim);
     text-decoration: none;
     font-size: 14px;
 }
 
 .home-link:hover {
-    color: #000;
+    color: var(--text);
 }
