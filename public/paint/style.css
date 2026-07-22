@@ -43,6 +43,22 @@ button:hover {
     background: var(--accent-glow);
 }
 
+button {
+    margin: 4px;
+}
+
+.tool-button {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: var(--text-dim);
+}
+
+.tool-button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
 input[type="range"] {
     vertical-align: middle;
 }
