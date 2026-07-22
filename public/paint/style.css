@@ -16,3 +16,16 @@ canvas {
 input[type="range"] {
     vertical-align: middle;
 }
+
+.home-link {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.home-link:hover {
+    color: #000;
+}

@@ -132,3 +132,16 @@ button:disabled {
         padding: 24px;
     }
 }
+
+.home-link {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.home-link:hover {
+    color: var(--text);
+}
